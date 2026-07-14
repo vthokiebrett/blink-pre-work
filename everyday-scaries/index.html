@@ -843,7 +843,7 @@ doc-page:not(:defined){visibility:hidden}
     Object.keys(LABELS).forEach(function(k){ payload[LABELS[k]] = d[k] || ''; });
     submit.disabled = true; flash('Submitting…', true);
     fetch(ENDPOINT, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(payload) })
-      .then(function(){ flash('<b>Submitted ✓</b> · sent to Blink. You can close this page.', true); })
+      .then(function(){ window.location.href = 'submitted/'; })
       .catch(function(){ submit.disabled = false; flash('Could not submit — check your connection and try again, or use “Download a copy”.', true); });
   });
 

@@ -164,6 +164,14 @@ def render_body(b):
     )
 
 
+def render_submitted(b):
+    """Branded confirmation page the form redirects to after a successful submit."""
+    tpl = read("template/submitted.html")
+    title = esc(b.get("title", "{} — Discovery Pre-Work".format(b["client_name"])))
+    return (tpl.replace("{{TITLE}}", title)
+               .replace("{{CLIENT_NAME}}", esc(b["client_name"])))
+
+
 def render_app_js(b):
     slug = b["slug"]
     js = read("template/app.js")
@@ -201,6 +209,12 @@ def build_brand(brand_path):
     out_path = os.path.join(out_dir, "index.html")
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(page)
+
+    # Confirmation page at <slug>/submitted/index.html
+    sub_dir = os.path.join(out_dir, "submitted")
+    os.makedirs(sub_dir, exist_ok=True)
+    with open(os.path.join(sub_dir, "index.html"), "w", encoding="utf-8") as f:
+        f.write(render_submitted(b))
 
     nq = sum(len(s["questions"]) for s in b["sections"])
     connected = "connected" if SHARED_ENDPOINT.startswith("http") else "NOT connected (placeholder endpoint)"
