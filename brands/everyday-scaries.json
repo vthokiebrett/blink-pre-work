@@ -1,0 +1,219 @@
+{
+  "slug": "everyday-scaries",
+  "form_name": "Everyday Scaries",
+  "storage_key": "blink-es-discovery-prework-v1",
+  "title": "Everyday Scaries — Discovery Pre-Work",
+  "cover_kicker_html": "BLINK SOCIAL &nbsp;·&nbsp; DISCOVERY PRE-WORK",
+  "cover_title_html": "Client<br>Questionnaire",
+  "cover_lede": "Complete this before your Discovery session and return it at least 48 hours in advance.",
+  "client_label": "Client",
+  "client_name": "Everyday Scaries",
+  "howto_label": "How to use this document",
+  "howto_title": "Six sections to shape a new content brand",
+  "howto_paras": [
+    "Your answers give your Blink strategist the context they need to make the Discovery session focused and actionable — not generic. The session itself is where we go deep; the pre-work is how we get there faster.",
+    "Most questions take 1–2 minutes and only need your honest instinct. A few ask you to look something up first — your analytics, channels, or team info. Those are marked. Pull that data before you start so you're not hunting for it mid-form."
+  ],
+  "est_time_html": "Estimated time: ~25 minutes &nbsp;·&nbsp; including a few quick data lookups",
+  "ready_label": "Before you start — have these ready",
+  "ready": [
+    {
+      "a": "Your LinkedIn analytics",
+      "b": "post reach, engagement, standout posts"
+    },
+    {
+      "a": "Any audience you can already reach",
+      "b": "LinkedIn following, email list, community — even if small"
+    },
+    {
+      "a": "Voices your audience follows",
+      "b": "other creators or brands in and around this space"
+    },
+    {
+      "a": "Content team info",
+      "b": "who creates content, how many hours per week are available"
+    }
+  ],
+  "sections": [
+    {
+      "num": "01",
+      "title": "Your Brand & Message",
+      "subtitle": "What you stand for, who it's for, and where you're headed",
+      "time": "~6 min",
+      "questions": [
+        {
+          "id": "1.1",
+          "name": "q1_1",
+          "text": "What is Everyday Scaries about, and what is its promise to the people who follow it?",
+          "help": "Think of it as your one-line pitch — why should someone follow Everyday Scaries instead of scrolling past? Focus on the message and what it gives people (permission, perspective, solidarity), not who it's for yet — we'll cover that in Section 03.",
+          "tag": "",
+          "min_height": 120
+        },
+        {
+          "id": "1.2",
+          "name": "q1_2",
+          "text": "Where does Everyday Scaries live today, and where do you want it to be in 12 months?",
+          "help": "You've started on LinkedIn. List the platforms you'll build on — LinkedIn, a newsletter, a podcast, Instagram, etc. — and note what's already started versus planned.",
+          "tag": "↗ Think this through first",
+          "min_height": 120
+        },
+        {
+          "id": "1.3",
+          "name": "q1_3",
+          "text": "What are your top 1–2 priorities for Everyday Scaries over the next 12 months?",
+          "help": "E.g. establishing the brand and its identity, growing a following, building audience affinity and trust, launching a subscription newsletter, planning a podcast.",
+          "tag": "",
+          "min_height": 110
+        },
+        {
+          "id": "1.4",
+          "name": "q1_4",
+          "text": "What do you want your content to do most right now?",
+          "help": "E.g. build awareness and recognition for the brand, grow a following, deepen audience affinity and trust, drive newsletter sign-ups, seed a community, establish your voice on the topic.",
+          "tag": "",
+          "min_height": 110
+        }
+      ]
+    },
+    {
+      "num": "02",
+      "title": "Your Brand Voice",
+      "subtitle": "How you talk and what you stand for",
+      "time": "~3 min",
+      "questions": [
+        {
+          "id": "2.1",
+          "name": "q2_1",
+          "text": "Describe the voice and personality of Everyday Scaries in 3–5 words or phrases.",
+          "help": "Don't overthink it. First instinct is usually most accurate.",
+          "tag": "",
+          "min_height": 90
+        },
+        {
+          "id": "2.2",
+          "name": "q2_2",
+          "text": "What do you believe about entrepreneurship and fear that most voices in this space aren't saying?",
+          "help": "This is your POV — the conviction that makes Everyday Scaries different from typical founder or hustle content. E.g. “The fear isn't a flaw, it's proof you care.” or “We glorify the grind and ignore the 3am doubt.”",
+          "tag": "",
+          "min_height": 130
+        }
+      ]
+    },
+    {
+      "num": "03",
+      "title": "Your Audience",
+      "subtitle": "Who follows you — and what makes it resonate",
+      "time": "~3 min",
+      "questions": [
+        {
+          "id": "3.1",
+          "name": "q3_1",
+          "text": "Describe the person Everyday Scaries is for. Who are they, and where do they already spend their attention?",
+          "help": "Include where they are in their journey (aspiring, early-stage, scaling), what they are feeling, and where they consume content — LinkedIn, newsletters, podcasts, communities, etc.",
+          "tag": "",
+          "min_height": 130
+        },
+        {
+          "id": "3.2",
+          "name": "q3_2",
+          "text": "What is the #1 reason someone would follow Everyday Scaries and stay?",
+          "help": "The specific feeling or belief that makes it resonate — being seen, feeling less alone, gaining perspective. This becomes the core of your content strategy.",
+          "tag": "",
+          "min_height": 110
+        }
+      ]
+    },
+    {
+      "num": "04",
+      "title": "Your Space",
+      "subtitle": "Whose voices share it — and what room they leave for you",
+      "time": "~3 min",
+      "questions": [
+        {
+          "id": "4.1",
+          "name": "q4_1",
+          "text": "Name 3–5 creators, brands, or voices your audience already follows in and around this space.",
+          "help": "Include both direct voices (others talking about the founder journey, fear, or mental health) and content they follow for inspiration. These don't have to be the same.",
+          "tag": "",
+          "min_height": 120
+        },
+        {
+          "id": "4.2",
+          "name": "q4_2",
+          "text": "What are those voices NOT saying that your audience clearly wants more of?",
+          "help": "Think honesty about fear, the emotional side of building, real stories over highlight reels, practical perspective, community — what's missing from how this space talks to people?",
+          "tag": "",
+          "min_height": 120
+        }
+      ]
+    },
+    {
+      "num": "05",
+      "title": "Your Content & Capacity",
+      "subtitle": "What you've built and what you can realistically produce",
+      "time": "~8 min",
+      "questions": [
+        {
+          "id": "5.1",
+          "name": "q5_1",
+          "text": "What have you published so far, and where? Include follower or connection counts if you have them.",
+          "help": "You've started on LinkedIn. List: platform → posts per week (approx.) → current following. This is pre-brand, so rough numbers are fine — or write that there is nothing formal yet.",
+          "tag": "↗ Look this up first",
+          "min_height": 120
+        },
+        {
+          "id": "5.2",
+          "name": "q5_2",
+          "text": "Has any post resonated noticeably — comments, shares, DMs, saves? What was it, and why do you think it landed?",
+          "help": "Check your LinkedIn analytics for standout posts. If it is still early, describe the kind of content you've seen resonate for similar voices.",
+          "tag": "↗ Look this up first",
+          "min_height": 120
+        },
+        {
+          "id": "5.3",
+          "name": "q5_3",
+          "text": "Who will create the content — and how many hours per week are realistically available?",
+          "help": "List who's involved: you, a collaborator, a freelancer, a ghostwriter or editor. Be honest about actual availability, not what you wish it were.",
+          "tag": "↗ Think this through first",
+          "min_height": 110
+        },
+        {
+          "id": "5.4",
+          "name": "q5_4",
+          "text": "What content formats feel most natural or exciting — and which do you want to avoid?",
+          "help": "E.g. personal essays and short posts, talking-to-camera or short-form video, storytelling from your own experience, interviews, a newsletter, a podcast, quote graphics. Be honest about what you'll actually sustain.",
+          "tag": "",
+          "min_height": 120
+        }
+      ]
+    },
+    {
+      "num": "06",
+      "title": "Your Goals for Discovery",
+      "subtitle": "What you want to walk away with",
+      "time": "~2 min",
+      "questions": [
+        {
+          "id": "6.1",
+          "name": "q6_1",
+          "text": "What is the single most important thing you want to leave the Discovery session with?",
+          "help": "E.g. a clear content strategy, a channel decision, a positioning statement, an audience definition, a content calendar framework, clarity on what to actually post.",
+          "tag": "",
+          "min_height": 110
+        },
+        {
+          "id": "6.2",
+          "name": "q6_2",
+          "text": "Is there anything about you, the brand, or where it's headed that we haven't asked about — that you think we need to know going in?",
+          "help": "Optional. Nothing is too small. Use this for anything that didn't fit earlier.",
+          "tag": "",
+          "min_height": 120
+        }
+      ]
+    }
+  ],
+  "closing_kicker": "That's everything we need",
+  "closing_title": "Thank you.",
+  "closing_body": "Please return this to your Blink strategist at least 48 hours before your Discovery session. Your answers — however rough — give us exactly what we need to make the session as focused and valuable as possible.",
+  "footer_right": "Everyday Scaries · Confidential"
+}

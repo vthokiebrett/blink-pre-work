@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Everyday Scaries — Discovery Pre-Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+/* ===== Blink Social design tokens (inlined) ===== */
+
+/* --- colors.css --- */
+:root {
+  /* ---- Brand accent ---- */
+  --coral: #D85030;          /* primary accent (cream theme) */
+  --coral-press: #B23F23;    /* hover / press */
+  --coral-dark: #E86B45;     /* accent on dark surfaces */
+  --coral-lift: #F0865F;     /* lighter accent on dark (icons, ring) */
+  --coral-eyebrow: #E8946F;  /* eyebrow label on dark */
+
+  /* ---- Cream (light) theme ---- */
+  --paper: #FBF8F4;          /* page background */
+  --ink: #17130F;            /* primary text + dark inset surfaces */
+  --ink-body: #4A423B;       /* lede / intro body */
+  --ink-muted: #6B6055;      /* secondary body copy */
+  --ink-subtle: #8A7E70;     /* italic captions, tertiary */
+  --ink-faint: #94897C;      /* uppercase micro-labels */
+  --ink-faint-2: #9A8C7D;    /* chip sublabels */
+
+  /* ---- Cream surfaces & lines ---- */
+  --surface: #F5EFE7;        /* inset station / step cards */
+  --surface-border: #ECE2D4;
+  --tint: #FBEFE9;           /* callout band fill */
+  --tint-border: #EDCFBF;
+  --chip-border: #EFD9CE;    /* white chip on tint */
+  --hairline: #E7DDCF;       /* dividers, rules */
+  --peach-numeral: #E0C3B4;  /* oversized step numerals */
+  --peach-on-coral: #FBD7C9; /* light text on coral fill */
+  --peach-on-coral-2: #FCE7DF;
+  --white: #ffffff;
+
+  /* ---- Dark theme ---- */
+  --paper-dark: #17130F;
+  --ink-on-dark: #ffffff;
+  --body-on-dark: #B8AC9E;
+  --muted-on-dark: #A99E90;
+  --faint-on-dark: #857A6C;
+  --line-on-dark: rgba(255,255,255,0.12);
+  --surface-on-dark: rgba(255,255,255,0.05);
+  --surface-border-on-dark: rgba(255,255,255,0.10);
+  --tint-on-dark: rgba(240,134,95,0.09);
+  --tint-border-on-dark: rgba(240,134,95,0.38);
+
+  /* ---- Semantic aliases ---- */
+  --text-strong: var(--ink);
+  --text-body: var(--ink-muted);
+  --text-lede: var(--ink-body);
+  --text-caption: var(--ink-subtle);
+  --text-label: var(--ink-faint);
+  --accent: var(--coral);
+  --accent-hover: var(--coral-press);
+  --surface-card: var(--surface);
+  --surface-callout: var(--tint);
+  --border-hairline: var(--hairline);
+}
+
+/* --- typography.css --- */
+:root {
+  /* ---- Families ---- */
+  --font-display: 'Space Grotesk', sans-serif; /* headings, wordmark, numerals, emphasis */
+  --font-body: 'Inter', sans-serif;            /* running body copy */
+
+  /* ---- Display / headings (Space Grotesk 700) ---- */
+  --type-hero: 700 40px/1.04 var(--font-display);      /* centered hero H1 */
+  --type-hero-rail: 700 37px/1.04 var(--font-display); /* narrower-column hero */
+  --type-hero-tracking: -0.015em;
+  --type-section: 700 17px/1.1 var(--font-display);    /* band / section H3 */
+  --type-step-title: 700 16.5px/1.15 var(--font-display);
+  --type-section-tracking: -0.01em;
+  --type-numeral: 700 22px/1 var(--font-display);      /* oversized 01 / 02 */
+  --type-wordmark: 700 20px/1 var(--font-display);     /* BLINK SOCIAL */
+  --type-wordmark-tracking: 0.14em;
+
+  /* ---- Emphasis line (Space Grotesk 500) ---- */
+  --type-kicker: 500 15.5px/1.45 var(--font-display);
+
+  /* ---- Body (Inter) ---- */
+  --type-lede: 400 13px/1.55 var(--font-body);   /* intro paragraph */
+  --type-body: 400 12.5px/1.5 var(--font-body);  /* standard body */
+  --type-body-sm: 400 11.5px/1.48 var(--font-body);
+  --type-micro: 400 9.5px/1.35 var(--font-body); /* diagram captions */
+
+  /* ---- Labels (uppercase, tracked) ---- */
+  --type-eyebrow: 700 9.5px/1 var(--font-body);
+  --type-eyebrow-tracking: 0.14em;
+  --type-tagline: 600 10.5px/1 var(--font-body); /* header tagline */
+  --type-tagline-tracking: 0.18em;
+}
+
+/* --- spacing.css --- */
+:root {
+  /* ---- Page geometry (US Letter @ 96dpi) ---- */
+  --page-w: 816px;
+  --page-h: 1056px;
+  --page-pad-x: 56px;
+  --page-pad-top: 38px;
+  --page-pad-bottom: 24px;
+
+  /* ---- Vertical rhythm between page blocks ---- */
+  --gap-block: 18px;   /* default space above a new block */
+  --gap-block-sm: 8px; /* tightened rhythm when fitting one page */
+  --gap-hero: 20px;    /* space below header before hero */
+
+  /* ---- Intra-component spacing ---- */
+  --gap-icon-text: 9px;  /* icon → label in a row */
+  --gap-columns: 26px;   /* between the 01 / 02 columns */
+  --gap-chips: 9px;      /* between callout chips */
+
+  /* ---- Component padding ---- */
+  --pad-card: 12px;      /* inset station / chip cards */
+  --pad-band: 15px 20px; /* callout band */
+}
+
+/* --- effects.css --- */
+:root {
+  /* ---- Corner radii ---- */
+  --radius-card: 10px;   /* station / chip cards */
+  --radius-band: 14px;   /* callout band */
+  --radius-core: 16px;   /* hub-orbit centre tile */
+  --radius-pill: 999px;  /* option badges, wordmark dot */
+
+  /* ---- Borders ---- */
+  --border-hair: 1px solid var(--hairline);
+  --border-core: 2px solid var(--coral);
+
+  /* ---- Shadows ---- */
+  --shadow-sheet: 0 30px 70px -30px rgba(0,0,0,0.30);       /* the page sheet (screen only) */
+  --shadow-band: 0 14px 30px -20px rgba(216,80,48,0.55);    /* coral-tinted callout band */
+  --shadow-core: 0 16px 34px -14px rgba(23,19,15,0.55);     /* dark hub-orbit centre */
+  --shadow-core-dark: 0 16px 34px -12px rgba(232,107,69,0.60);
+
+  /* ---- Diagram ---- */
+  --orbit-dash: 2 7;                 /* dashed ellipse stroke-dasharray */
+  --orbit-ring: #DFC0AF;             /* dashed ring, cream */
+  --orbit-ring-dark: rgba(240,134,95,0.40);
+  --orbit-spoke: #E3D8C9;            /* hub → station line, cream */
+  --orbit-spoke-dark: rgba(255,255,255,0.12);
+}
+
+
+/* ===== Page / form styles ===== */
+doc-page:not(:defined){visibility:hidden}
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin:0; font-family: var(--font-body); color: var(--ink); }
+  doc-page { color: var(--ink); }
+
+  h1,h2,h3 { margin:0; }
+  p { margin:0; }
+
+  /* running footer */
+  .foot { display:flex; align-items:center; justify-content:space-between;
+    font: 600 8.5px/1 var(--font-body); letter-spacing:.12em; text-transform:uppercase;
+    color: var(--ink-faint); padding: 10px 4px 0; border-top:1px solid var(--hairline); }
+  .foot .dot { width:8px;height:8px;border-radius:50%;background:var(--coral);display:inline-block;margin-right:7px;vertical-align:middle;}
+
+  /* ---------- COVER ---------- */
+  .cover-kicker { display:flex; align-items:center; gap:10px; font: 700 11px/1 var(--font-body);
+    letter-spacing:.18em; text-transform:uppercase; color:var(--ink-faint); }
+  .cover-kicker .dot { width:12px;height:12px;border-radius:50%;background:var(--coral); }
+  .cover-title { font: 700 46px/1.02 var(--font-display); letter-spacing:-0.015em; margin:22px 0 14px; }
+  .cover-lede { font: 400 15px/1.55 var(--font-body); color:var(--ink-body); max-width:560px; }
+  .client-tag { display:inline-flex; flex-direction:column; gap:3px; margin-top:30px;
+    background:var(--ink); color:#fff; border-radius:12px; padding:14px 22px; }
+  .client-tag .cl-lbl { font:700 9px/1 var(--font-body); letter-spacing:.18em; text-transform:uppercase; color:var(--coral-eyebrow); }
+  .client-tag .cl-name { font:700 22px/1 var(--font-display); }
+
+  .block-label { font:700 9.5px/1 var(--font-body); letter-spacing:.16em; text-transform:uppercase; color:var(--coral); margin-bottom:12px; }
+  .howto { margin-top:40px; }
+  .howto h2 { font: var(--type-section); letter-spacing:var(--type-section-tracking); margin-bottom:10px; }
+  .howto p { font: 400 12.5px/1.6 var(--font-body); color:var(--ink-muted); margin-bottom:10px; max-width:600px; }
+  .esttime { display:inline-block; margin-top:6px; font:600 11px/1 var(--font-body); color:var(--ink);
+    background:var(--tint); border:1px solid var(--tint-border); border-radius:999px; padding:8px 15px; }
+
+  /* ready + toc */
+  .ready { margin-top:34px; margin-bottom:40px; background:var(--surface); border:1px solid var(--surface-border); border-radius:14px; padding:20px 22px; }
+  .ready ul { list-style:none; margin:12px 0 0; padding:0; display:flex; flex-direction:column; gap:11px; }
+  .ready li { display:flex; flex-direction:column; gap:2px; padding-left:20px; position:relative; }
+  .ready li::before { content:"→"; position:absolute; left:0; top:0; color:var(--coral); font-weight:700; }
+  .ready .ri-a { font:700 12px/1.3 var(--font-display); color:var(--ink); }
+  .ready .ri-b { font:400 11px/1.4 var(--font-body); color:var(--ink-muted); }
+
+  .toc { margin-top:26px; }
+  .toc h2 { font:700 9.5px/1 var(--font-body); letter-spacing:.16em; text-transform:uppercase; color:var(--coral); margin-bottom:12px; }
+  .tocrow { display:flex; align-items:center; gap:16px; padding:11px 4px; border-bottom:1px solid var(--hairline); }
+  .tocrow:first-of-type { border-top:1px solid var(--hairline); }
+  .tocnum { font:700 15px/1 var(--font-display); color:var(--peach-numeral); width:26px; }
+  .toctitle { flex:1; font:700 14px/1 var(--font-display); color:var(--ink); }
+  .toctime { font:600 10px/1 var(--font-body); letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); }
+
+  /* ---------- SECTIONS ---------- */
+  .sec { break-before: page; }
+  .secband { display:flex; align-items:center; gap:16px; padding-bottom:16px; margin-bottom:22px; border-bottom:2px solid var(--ink); break-after: avoid; }
+  .secnum { font:700 40px/1 var(--font-display); color:var(--coral); letter-spacing:-0.02em; }
+  .secmeta { flex:1; }
+  .sectitle { font:700 22px/1.05 var(--font-display); letter-spacing:-0.01em; text-transform:uppercase; }
+  .secsub { font:400 12px/1.4 var(--font-body); color:var(--ink-muted); margin-top:4px; }
+  .sectime { font:600 10px/1 var(--font-body); letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint);
+    background:var(--tint); border:1px solid var(--tint-border); border-radius:999px; padding:7px 13px; white-space:nowrap; }
+
+  .q { break-inside: avoid; margin-bottom:24px; }
+  .qhead { display:flex; gap:12px; align-items:baseline; }
+  .qid { font:700 15px/1.3 var(--font-display); color:var(--coral); flex-shrink:0; width:30px; }
+  .qtext { font:700 14.5px/1.35 var(--font-display); color:var(--ink); letter-spacing:-0.005em; }
+  .qtag { display:inline-block; font:700 8.5px/1 var(--font-body); letter-spacing:.1em; text-transform:uppercase;
+    color:var(--coral); background:var(--tint); border:1px solid var(--tint-border); border-radius:999px; padding:4px 9px; margin-left:4px; white-space:nowrap; vertical-align:middle; }
+  .qhelp { font:400 11.5px/1.5 var(--font-body); color:var(--ink-muted); margin:6px 0 10px 42px; max-width:560px; }
+  .answer { display:block; width:calc(100% - 42px); margin-left:42px; background:#fff;
+    border:1px solid var(--surface-border); border-radius:10px; padding:12px 14px;
+    font: 400 12.5px/1.7 var(--font-body); color:var(--ink); resize:vertical; }
+  .answer::placeholder { color:var(--ink-faint); }
+  .answer:focus { outline:none; border-color:var(--coral); box-shadow:0 0 0 3px rgba(216,80,48,0.14); }
+
+  .coverfields { display:flex; gap:14px; margin-top:16px; max-width:420px; }
+  .cf { flex:1; display:flex; flex-direction:column; gap:5px; }
+  .cf span { font:700 8.5px/1 var(--font-body); letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); }
+  .cf input { font: 400 13px/1 var(--font-body); color:var(--ink); background:#fff;
+    border:1px solid var(--surface-border); border-radius:9px; padding:10px 12px; }
+  .cf input::placeholder { color:var(--ink-faint); }
+  .cf input:focus { outline:none; border-color:var(--coral); box-shadow:0 0 0 3px rgba(216,80,48,0.14); }
+
+  /* ---------- CLOSING ---------- */
+  .closing { break-before: page; text-align:center; padding-top:40px; }
+  .closing .ok { font:700 9.5px/1 var(--font-body); letter-spacing:.16em; text-transform:uppercase; color:var(--coral); margin-bottom:14px; }
+  .closing h2 { font:700 30px/1.1 var(--font-display); letter-spacing:-0.015em; max-width:560px; margin:0 auto 14px; }
+  .closing p { font:400 13px/1.6 var(--font-body); color:var(--ink-body); max-width:500px; margin:0 auto; }
+  .closing .rule { width:60px; height:3px; background:var(--coral); border-radius:2px; margin:26px auto 0; }
+
+  /* action bar */
+  .actionbar { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:34px; }
+  .btn { font:700 12px/1 var(--font-display); letter-spacing:.01em; border-radius:999px; padding:13px 24px; cursor:pointer; border:1px solid transparent; }
+  .btn-primary { background:var(--coral); color:#fff; }
+  .btn-primary:hover { background:var(--coral-press); }
+  .btn-ghost { background:transparent; color:var(--ink-muted); border-color:var(--surface-border); }
+  .btn-ghost:hover { color:var(--ink); border-color:var(--ink-faint); }
+  .savenote { text-align:center; margin-top:14px; font:500 10.5px/1 var(--font-body); letter-spacing:.04em; color:var(--ink-faint); }
+  .savenote b { color:var(--coral); font-weight:700; }
+  @media print { .actionbar, .savenote { display:none !important; } }
+
+</style>
+</head>
+<body>
+<doc-page size="letter" orientation="portrait" margin="0.7in">
+
+  <div slot="footer" class="foot">
+    <span><span class="dot"></span>Blink Social · Discovery Pre-Work</span>
+    <span>Everyday Scaries · Confidential</span>
+  </div>
+
+  <form autocomplete="off">
+  <!-- COVER -->
+  <div class="cover-kicker"><span class="dot"></span>BLINK SOCIAL &nbsp;·&nbsp; DISCOVERY PRE-WORK</div>
+  <h1 class="cover-title">Client<br>Questionnaire</h1>
+  <p class="cover-lede">Complete this before your Discovery session and return it at least 48 hours in advance.</p>
+  <div class="client-tag"><span class="cl-lbl">Client</span><span class="cl-name">Everyday Scaries</span></div>
+  <div class="coverfields">
+    <label class="cf"><span>Completed by</span><input type="text" name="completed_by" placeholder="Your name"></label>
+    <label class="cf"><span>Date</span><input type="text" name="date" placeholder="MM / DD / YYYY"></label>
+  </div>
+
+  <div class="howto">
+    <div class="block-label">How to use this document</div>
+    <h2>Six sections to shape a new content brand</h2>
+    <p>Your answers give your Blink strategist the context they need to make the Discovery session focused and actionable — not generic. The session itself is where we go deep; the pre-work is how we get there faster.</p>
+    <p>Most questions take 1–2 minutes and only need your honest instinct. A few ask you to look something up first — your analytics, channels, or team info. Those are marked. Pull that data before you start so you're not hunting for it mid-form.</p>
+    <span class="esttime">Estimated time: ~25 minutes &nbsp;·&nbsp; including a few quick data lookups</span>
+  </div>
+
+  <div class="ready">
+    <div class="block-label" style="margin-bottom:0">Before you start — have these ready</div>
+    <ul>
+          <li><span class="ri-a">Your LinkedIn analytics</span><span class="ri-b">post reach, engagement, standout posts</span></li>
+          <li><span class="ri-a">Any audience you can already reach</span><span class="ri-b">LinkedIn following, email list, community — even if small</span></li>
+          <li><span class="ri-a">Voices your audience follows</span><span class="ri-b">other creators or brands in and around this space</span></li>
+          <li><span class="ri-a">Content team info</span><span class="ri-b">who creates content, how many hours per week are available</span></li>
+    </ul>
+  </div>
+
+  <!-- SECTIONS -->
+
+      <section class="sec">
+        <div class="secband">
+          <div class="secnum">01</div>
+          <div class="secmeta">
+            <div class="sectitle">Your Brand &amp; Message</div>
+            <div class="secsub">What you stand for, who it's for, and where you're headed</div>
+          </div>
+          <div class="sectime">~6 min</div>
+        </div>
+
+        <div class="q">
+          <div class="qhead"><span class="qid">1.1</span><span class="qtext">What is Everyday Scaries about, and what is its promise to the people who follow it?</span></div>
+          <p class="qhelp">Think of it as your one-line pitch — why should someone follow Everyday Scaries instead of scrolling past? Focus on the message and what it gives people (permission, perspective, solidarity), not who it's for yet — we'll cover that in Section 03.</p>
+          <textarea class="answer" name="q1_1" style="min-height:120px" placeholder="Type your answer…"></textarea>
+        </div>
+        <div class="q">
+          <div class="qhead"><span class="qid">1.2</span><span class="qtext">Where does Everyday Scaries live today, and where do you want it to be in 12 months? <span class="qtag">↗ Think this through first</span></span></div>
+          <p class="qhelp">You've started on LinkedIn. List the platforms you'll build on — LinkedIn, a newsletter, a podcast, Instagram, etc. — and note what's already started versus planned.</p>
+          <textarea class="answer" name="q1_2" style="min-height:120px" placeholder="Type your answer…"></textarea>
+        </div>
+        <div class="q">
+          <div class="qhead"><span class="qid">1.3</span><span class="qtext">What are your top 1–2 priorities for Everyday Scaries over the next 12 months?</span></div>
+          <p class="qhelp">E.g. establishing the brand and its identity, growing a following, building audience affinity and trust, launching a subscription newsletter, planning a podcast.</p>
+          <textarea class="answer" name="q1_3" style="min-height:110px" placeholder="Type your answer…"></textarea>
+        </div>
+        <div class="q">
+          <div class="qhead"><span class="qid">1.4</span><span class="qtext">What do you want your content to do most right now?</span></div>
+          <p class="qhelp">E.g. build awareness and recognition for the brand, grow a following, deepen audience affinity and trust, drive newsletter sign-ups, seed a community, establish your voice on the topic.</p>
+          <textarea class="answer" name="q1_4" style="min-height:110px" placeholder="Type your answer…"></textarea>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="secband">
+          <div class="secnum">02</div>
+          <div class="secmeta">
+            <div class="sectitle">Your Brand Voice</div>
+            <div class="secsub">How you talk and what you stand for</div>
+          </div>
+          <div class="sectime">~3 min</div>
+        </div>
+
+        <div class="q">
+          <div class="qhead"><span class="qid">2.1</span><span class="qtext">Describe the voice and personality of Everyday Scaries in 3–5 words or phrases.</span></div>
+          <p class="qhelp">Don't overthink it. First instinct is usually most accurate.</p>
+          <textarea class="answer" name="q2_1" style="min-height:90px" placeholder="Type your answer…"></textarea>
+        </div>
+        <div class="q">
+          <div class="qhead"><span class="qid">2.2</span><span class="qtext">What do you believe about entrepreneurship and fear that most voices in this space aren't saying?</span></div>
+          <p class="qhelp">This is your POV — the conviction that makes Everyday Scaries different from typical founder or hustle content. E.g. “The fear isn't a flaw, it's proof you care.” or “We glorify the grind and ignore the 3am doubt.”</p>
+          <textarea class="answer" name="q2_2" style="min-height:130px" placeholder="Type your answer…"></textarea>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="secband">
+          <div class="secnum">03</div>
+          <div class="secmeta">
+            <div class="sectitle">Your Audience</div>
+            <div class="secsub">Who follows you — and what makes it resonate</div>
+          </div>
+          <div class="sectime">~3 min</div>
+        </div>
+
+        <div class="q">
+          <div class="qhead"><span class="qid">3.1</span><span class="qtext">Describe the person Everyday Scaries is for. Who are they, and where do they already spend their attention?</span></div>
+          <p class="qhelp">Include where they are in their journey (aspiring, early-stage, scaling), what they are feeling, and where they consume content — LinkedIn, newsletters, podcasts, communities, etc.</p>
+          <textarea class="answer" name="q3_1" style="min-height:130px" placeholder="Type your answer…"></textarea>
+        </div>
+        <div class="q">
+          <div class="qhead"><span class="qid">3.2</span><span class="qtext">What is the #1 reason someone would follow Everyday Scaries and stay?</span></div>
+          <p class="qhelp">The specific feeling or belief that makes it resonate — being seen, feeling less alone, gaining perspective. This becomes the core of your content strategy.</p>
+          <textarea class="answer" name="q3_2" style="min-height:110px" placeholder="Type your answer…"></textarea>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="secband">
+          <div class="secnum">04</div>
+          <div class="secmeta">
+            <div class="sectitle">Your Space</div>
+            <div class="secsub">Whose voices share it — and what room they leave for you</div>
+          </div>
+          <div class="sectime">~3 min</div>
+        </div>
+
+        <div class="q">
+          <div class="qhead"><span class="qid">4.1</span><span class="qtext">Name 3–5 creators, brands, or voices your audience already follows in and around this space.</span></div>
+          <p class="qhelp">Include both direct voices (others talking about the founder journey, fear, or mental health) and content they follow for inspiration. These don't have to be the same.</p>
+          <textarea class="answer" name="q4_1" style="min-height:120px" placeholder="Type your answer…"></textarea>
+        </div>
+        <div class="q">
+          <div class="qhead"><span class="qid">4.2</span><span class="qtext">What are those voices NOT saying that your audience clearly wants more of?</span></div>
+          <p class="qhelp">Think honesty about fear, the emotional side of building, real stories over highlight reels, practical perspective, community — what's missing from how this space talks to people?</p>
+          <textarea class="answer" name="q4_2" style="min-height:120px" placeholder="Type your answer…"></textarea>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="secband">
+          <div class="secnum">05</div>
+          <div class="secmeta">
+            <div class="sectitle">Your Content &amp; Capacity</div>
+            <div class="secsub">What you've built and what you can realistically produce</div>
+          </div>
+          <div class="sectime">~8 min</div>
+        </div>
+
+        <div class="q">
+          <div class="qhead"><span class="qid">5.1</span><span class="qtext">What have you published so far, and where? Include follower or connection counts if you have them. <span class="qtag">↗ Look this up first</span></span></div>
+          <p class="qhelp">You've started on LinkedIn. List: platform → posts per week (approx.) → current following. This is pre-brand, so rough numbers are fine — or write that there is nothing formal yet.</p>
+          <textarea class="answer" name="q5_1" style="min-height:120px" placeholder="Type your answer…"></textarea>
+        </div>
+        <div class="q">
+          <div class="qhead"><span class="qid">5.2</span><span class="qtext">Has any post resonated noticeably — comments, shares, DMs, saves? What was it, and why do you think it landed? <span class="qtag">↗ Look this up first</span></span></div>
+          <p class="qhelp">Check your LinkedIn analytics for standout posts. If it is still early, describe the kind of content you've seen resonate for similar voices.</p>
+          <textarea class="answer" name="q5_2" style="min-height:120px" placeholder="Type your answer…"></textarea>
+        </div>
+        <div class="q">
+          <div class="qhead"><span class="qid">5.3</span><span class="qtext">Who will create the content — and how many hours per week are realistically available? <span class="qtag">↗ Think this through first</span></span></div>
+          <p class="qhelp">List who's involved: you, a collaborator, a freelancer, a ghostwriter or editor. Be honest about actual availability, not what you wish it were.</p>
+          <textarea class="answer" name="q5_3" style="min-height:110px" placeholder="Type your answer…"></textarea>
+        </div>
+        <div class="q">
+          <div class="qhead"><span class="qid">5.4</span><span class="qtext">What content formats feel most natural or exciting — and which do you want to avoid?</span></div>
+          <p class="qhelp">E.g. personal essays and short posts, talking-to-camera or short-form video, storytelling from your own experience, interviews, a newsletter, a podcast, quote graphics. Be honest about what you'll actually sustain.</p>
+          <textarea class="answer" name="q5_4" style="min-height:120px" placeholder="Type your answer…"></textarea>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="secband">
+          <div class="secnum">06</div>
+          <div class="secmeta">
+            <div class="sectitle">Your Goals for Discovery</div>
+            <div class="secsub">What you want to walk away with</div>
+          </div>
+          <div class="sectime">~2 min</div>
+        </div>
+
+        <div class="q">
+          <div class="qhead"><span class="qid">6.1</span><span class="qtext">What is the single most important thing you want to leave the Discovery session with?</span></div>
+          <p class="qhelp">E.g. a clear content strategy, a channel decision, a positioning statement, an audience definition, a content calendar framework, clarity on what to actually post.</p>
+          <textarea class="answer" name="q6_1" style="min-height:110px" placeholder="Type your answer…"></textarea>
+        </div>
+        <div class="q">
+          <div class="qhead"><span class="qid">6.2</span><span class="qtext">Is there anything about you, the brand, or where it's headed that we haven't asked about — that you think we need to know going in?</span></div>
+          <p class="qhelp">Optional. Nothing is too small. Use this for anything that didn't fit earlier.</p>
+          <textarea class="answer" name="q6_2" style="min-height:120px" placeholder="Type your answer…"></textarea>
+        </div>
+      </section>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="ok">That's everything we need</div>
+    <h2>Thank you.</h2>
+    <p>Please return this to your Blink strategist at least 48 hours before your Discovery session. Your answers — however rough — give us exactly what we need to make the session as focused and valuable as possible.</p>
+    <div class="rule"></div>
+    <div class="actionbar">
+      <button type="button" class="btn btn-primary" id="submitBtn">Submit to Blink</button>
+      <button type="button" class="btn btn-ghost" id="downloadBtn">Download a copy (CSV)</button>
+      <button type="button" class="btn btn-ghost" id="clearBtn">Clear my answers</button>
+    </div>
+    <div class="savenote" id="saveNote">Your answers save automatically in this browser.</div>
+  </div>
+
+  </form>
+</doc-page>
+<script>
+// @ds-adherence-ignore -- omelette starter scaffold (raw elements/hex/px by design)
+// Copied omelette starter. Re-running copy_starter_component with this kind overwrites this file with the latest version (page content is unaffected).
+/* BEGIN USAGE */
+/**
+ * <doc-page> — paged-document shell for printable HTML.
+ *
+ * On screen the document renders as a single continuous sheet on a desk
+ * background (Google Docs' pageless view): you scroll one tall page card.
+ * There is no manual page-splitting — write the whole document as normal
+ * flow inside <doc-page> and the browser's print engine paginates it at
+ * export.
+ *
+ * At print the component injects `@page { size: …; margin: 0 }` (which
+ * leaves Chrome no margin box to draw its date/URL/page-count header in)
+ * and moves the visual margin onto the sheet's own padding, so the printed
+ * page has the same inset you see on screen. Standard break-hygiene rules
+ * (`break-inside: avoid` on figures, code blocks, images and table rows;
+ * `orphans/widows: 3`) are applied so paragraphs and groups split cleanly.
+ * On screen and at print, headings default to `text-wrap: balance` and
+ * body text (p, li, blockquote, figcaption) to `text-wrap: pretty`, so
+ * the document avoids widowed/orphaned words; the defaults have zero
+ * specificity, so any text-wrap you declare on those elements wins.
+ * The component also marks the document as owning its print CSS (a
+ * `meta[name="omelette-owns-print"]` it injects at runtime), so the
+ * PDF export never injects page-geometry CSS of its own on top.
+ *
+ * Usage:
+ *   <style>doc-page:not(:defined){visibility:hidden}</style>
+ *   <doc-page size="letter" margin="0.75in">
+ *     <h1>Title</h1>
+ *     <p>…body…</p>
+ *   </doc-page>
+ *   <script src="doc-page.js"><\/script>
+ *
+ * Attributes:
+ *   size    — letter | a4 | legal (default letter)
+ *   orientation — portrait (default) | landscape. For documents built to
+ *           export, always set it explicitly. landscape swaps the named
+ *           size's dimensions (letter landscape prints 11in × 8.5in).
+ *   width / height — explicit CSS lengths, override `size` and
+ *           `orientation`
+ *   margin  — printable inset on every page (default 0.75in); margin="0"
+ *           makes pages full-bleed (content then owns its own insets)
+ *
+ * Running header/footer (optional): give an element `slot="header"` or
+ * `slot="footer"` and it repeats on every printed page via
+ * `position: fixed`. To keep body text from sliding under it, the
+ * component prints inside a single-cell table whose <thead>/<tfoot> are
+ * spacers sized to the header/footer height — browsers repeat thead/tfoot
+ * on every page, so each sheet's content starts below the header and ends
+ * above the footer. On screen the header/footer render once at the
+ * top/bottom of the sheet.
+ *
+ * Print best practices for the content you author:
+ * - Multi-column text: use CSS columns (`column-count` +
+ *   `column-gap`), never side-by-side flex/grid columns — only real
+ *   CSS columns flow and break across pages. `column-span: all` lets
+ *   a heading span the columns; `hyphens: auto` (needs `lang` on
+ *   the html element) keeps narrow columns readable.
+ * - Page breaks: `break-before: page` on an element that must start
+ *   a new page (a chapter, an appendix). Add your own kept-together
+ *   blocks (callouts, stat tiles, cards) to a `break-inside: avoid`
+ *   rule, and keep each one shorter than a page.
+ * - Extend `orphans: 3; widows: 3` to any custom text blocks you add
+ *   (p and li are covered by default).
+ * - Give long tables a <thead> — browsers repeat it on every printed
+ *   page.
+ * - No `position: fixed`/`sticky` and no viewport units in content:
+ *   fixed elements stamp every printed page (running headers/footers go
+ *   in the component's slots) and `100vh` mis-sizes at print.
+ *
+ * Author content as static HTML so the user can click-to-edit any text
+ * directly. Do not set width/padding/background on the document body —
+ * the component owns the sheet box.
+ */
+/* END USAGE */
+
+(() => {
+  const PAPER = {
+    letter: ['8.5in', '11in'],
+    a4: ['210mm', '297mm'],
+    legal: ['8.5in', '14in'],
+  };
+  const CSS_LENGTH = /^\d+(\.\d+)?(px|in|mm|cm|pt|pc)$/;
+  // Unitless "0" is a valid CSS length and the natural way to write
+  // margin="0"; normalise it to 0px so max()/calc() (which reject a bare
+  // number) keep working.
+  const safeLen = (v, fb) => {
+    v = (v || '').trim();
+    return v === '0' ? '0px' : CSS_LENGTH.test(v) ? v : fb;
+  };
+
+  const stylesheet = `
+    :host {
+      position: relative;
+      display: block;
+      /* When the viewport is narrower than the page, grow to wrap the
+       * sheet (plus this padding) instead of staying viewport-width, so
+       * the desk background and right margin reach the sheet's far edge
+       * in the horizontal scroll. */
+      min-width: max-content;
+      min-height: 100vh;
+      background: #ece8dd;
+      padding: 48px 24px;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      --doc-page-w: 8.5in;
+      --doc-page-h: 11in;
+      --doc-page-margin: 0.75in;
+      --doc-hdr-h: 0px;
+      --doc-ftr-h: 0px;
+      --doc-hdr-pad: 0px;
+      --doc-ftr-pad: 0px;
+    }
+    .sheet {
+      width: var(--doc-page-w);
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 2px 14px rgba(20, 20, 19, 0.12);
+      border-radius: 2px;
+      box-sizing: border-box;
+      padding: var(--doc-page-margin);
+    }
+    .frame { width: 100%; border-collapse: collapse; }
+    .frame td, .frame th { padding: 0; text-align: left; font-weight: inherit; }
+    .hdr-space { height: var(--doc-hdr-h); }
+    .ftr-space { height: var(--doc-ftr-h); }
+    ::slotted([slot="header"]),
+    ::slotted([slot="footer"]) { display: block; box-sizing: border-box; }
+    @media print {
+      :host { background: none; padding: 0; min-width: 0; min-height: 0; }
+      .sheet {
+        width: auto; margin: 0; box-shadow: none; border-radius: 0;
+        padding: 0 var(--doc-page-margin);
+      }
+      /* The thead/tfoot spacers repeat on every page, so they carry the
+       * vertical page margin (which the sheet's own padding cannot, since
+       * that padding is consumed once on the first/last page). The running
+       * header/footer are fixed inside that band. */
+      /* The 0.35in is breathing room between a running header/footer and
+       * the body; without one the spacer is exactly the page margin, so a
+       * margin="0" full-bleed document gets truly full-bleed pages. */
+      .hdr-space { height: max(var(--doc-page-margin), calc(var(--doc-hdr-h) + var(--doc-hdr-pad))); }
+      .ftr-space { height: max(var(--doc-page-margin), calc(var(--doc-ftr-h) + var(--doc-ftr-pad))); }
+      ::slotted([slot="header"]) {
+        position: fixed; top: 0; left: 0; right: 0; margin: 0;
+        padding: calc(var(--doc-page-margin) * 0.45) var(--doc-page-margin) 0;
+      }
+      ::slotted([slot="footer"]) {
+        position: fixed; bottom: 0; left: 0; right: 0; margin: 0;
+        padding: 0 var(--doc-page-margin) calc(var(--doc-page-margin) * 0.45);
+      }
+    }
+  `;
+
+  class DocPage extends HTMLElement {
+    static get observedAttributes() { return ['size', 'width', 'height', 'margin', 'orientation']; }
+
+    constructor() {
+      super();
+      this._root = this.attachShadow({ mode: 'open' });
+      this._mo = typeof MutationObserver === 'function'
+        ? new MutationObserver(() => this._scheduleMeasure())
+        : null;
+    }
+
+    /** The named paper's [w, h], swapped when orientation="landscape".
+     *  Only the named size swaps — explicit width/height are exact values
+     *  the author already oriented. */
+    _paperSize() {
+      const named = PAPER[(this.getAttribute('size') || '').toLowerCase()] || PAPER.letter;
+      const landscape =
+        (this.getAttribute('orientation') || '').trim().toLowerCase() === 'landscape';
+      return landscape ? [named[1], named[0]] : named;
+    }
+    get pageWidth() {
+      return safeLen(this.getAttribute('width'), this._paperSize()[0]);
+    }
+    get pageHeight() {
+      return safeLen(this.getAttribute('height'), this._paperSize()[1]);
+    }
+    get pageMargin() { return safeLen(this.getAttribute('margin'), '0.75in'); }
+
+    connectedCallback() {
+      if (!this._sheet) this._render();
+      this._syncSize();
+      this._syncPrintPageRule();
+      this._ensureTextWrapDefaults();
+      this._ensureOwnsPrintMeta();
+      if (this._mo) this._mo.observe(this, {
+        subtree: true, childList: true, characterData: true, attributes: true,
+      });
+      this._onResize = () => this._scheduleMeasure();
+      window.addEventListener('resize', this._onResize);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => this._scheduleMeasure());
+      }
+      this._scheduleMeasure();
+    }
+
+    disconnectedCallback() {
+      window.removeEventListener('resize', this._onResize);
+      if (this._mo) this._mo.disconnect();
+      if (this._raf) { cancelAnimationFrame(this._raf); this._raf = null; }
+      // Drop the head rules when the last doc-page leaves, so a deleted
+      // document's @page geometry and text-wrap defaults can't apply to
+      // whatever replaces it.
+      if (!document.querySelector('doc-page')) {
+        ['doc-page-print', 'doc-page-text-wrap', 'doc-page-owns-print'].forEach((id) => {
+          const tag = document.getElementById(id);
+          if (tag) tag.remove();
+        });
+      }
+    }
+
+    attributeChangedCallback() {
+      if (!this._sheet) return;
+      this._syncSize();
+      this._syncPrintPageRule();
+      this._scheduleMeasure();
+    }
+
+    _render() {
+      this._root.innerHTML = `
+        <style>${stylesheet}</style>
+        <style id="vars"></style>
+        <div class="sheet" data-screen-label="Document">
+          <table class="frame" role="presentation">
+            <thead><tr><th><div class="hdr-space"><slot name="header"></slot></div></th></tr></thead>
+            <tbody><tr><td class="body"><slot></slot></td></tr></tbody>
+            <tfoot><tr><td><div class="ftr-space"><slot name="footer"></slot></div></td></tr></tfoot>
+          </table>
+        </div>`;
+      this._sheet = this._root.querySelector('.sheet');
+      this._vars = this._root.getElementById('vars');
+    }
+
+    /** Runtime sizing lives in a shadow <style> :host rule, never on the
+     *  light-DOM host element, so serialize-persist can't write it back. */
+    _syncSize(hdrH, ftrH) {
+      this._vars.textContent = ':host{' +
+        '--doc-page-w:' + this.pageWidth + ';' +
+        '--doc-page-h:' + this.pageHeight + ';' +
+        '--doc-page-margin:' + this.pageMargin + ';' +
+        '--doc-hdr-h:' + (hdrH || 0) + 'px;' +
+        '--doc-ftr-h:' + (ftrH || 0) + 'px;' +
+        '--doc-hdr-pad:' + (hdrH ? '0.35in' : '0px') + ';' +
+        '--doc-ftr-pad:' + (ftrH ? '0.35in' : '0px') + '}';
+    }
+
+    /** @page is a no-op inside shadow DOM, so the rule lives in <head>.
+     *  Re-appended on every sync so it stays last in source order — the
+     *  @page cascade is source-order per descriptor, so this rule wins
+     *  over any other @page rule in the document. */
+    _syncPrintPageRule() {
+      const id = 'doc-page-print';
+      let tag = document.getElementById(id);
+      if (!tag) {
+        tag = document.createElement('style');
+        tag.id = id;
+      }
+      document.head.appendChild(tag);
+      tag.textContent =
+        '@page { size: ' + this.pageWidth + ' ' + this.pageHeight + '; margin: 0; } ' +
+        '@media print { html, body { margin: 0 !important; padding: 0 !important; background: none !important; height: auto !important; overflow: visible !important; } ' +
+        'h1,h2,h3,h4,h5,h6 { break-after: avoid; } ' +
+        'figure,pre,blockquote,img,svg,tr { break-inside: avoid; } ' +
+        'p,li { orphans: 3; widows: 3; } ' +
+        '* { -webkit-print-color-adjust: exact; print-color-adjust: exact; } ' +
+        '*, *::before, *::after { animation-delay: -99s !important; animation-duration: .001s !important; ' +
+        'animation-iteration-count: 1 !important; animation-fill-mode: both !important; ' +
+        'animation-play-state: running !important; transition-duration: 0s !important; } }';
+    }
+
+    /** Typographic defaults for document text: balance headings, avoid
+     *  widowed/orphaned words in body copy (browsers without text-wrap
+     *  support drop the declarations). Zero-specificity via :where() so
+     *  any text-wrap authored on those elements wins; document-level so the
+     *  rules reach the slotted (light DOM) content — shadow styles can't.
+     *  data-omelette-injected marks the tag for the host editor to strip
+     *  at serialize, so it is never written back as authored source. */
+    _ensureTextWrapDefaults() {
+      if (document.getElementById('doc-page-text-wrap')) return;
+      const tag = document.createElement('style');
+      tag.id = 'doc-page-text-wrap';
+      tag.setAttribute('data-omelette-injected', '');
+      tag.textContent =
+        ':where(h1,h2,h3,h4,h5,h6){text-wrap:balance}' +
+        ':where(p,li,blockquote,figcaption){text-wrap:pretty}';
+      document.head.appendChild(tag);
+    }
+
+    /** Declares that this document owns its print CSS. The instant-PDF
+     *  export checks for the meta by NAME PRESENCE alone (content is
+     *  ignored) and skips its automatic print-CSS injections, so the
+     *  component's @page geometry is never overridden by a heuristic.
+     *  data-omelette-injected keeps it out of serialized source. */
+    _ensureOwnsPrintMeta() {
+      if (document.getElementById('doc-page-owns-print')) return;
+      const tag = document.createElement('meta');
+      tag.id = 'doc-page-owns-print';
+      tag.name = 'omelette-owns-print';
+      tag.content = 'true';
+      tag.setAttribute('data-omelette-injected', '');
+      document.head.appendChild(tag);
+    }
+
+    _scheduleMeasure() {
+      if (this._raf) return;
+      this._raf = requestAnimationFrame(() => { this._raf = null; this._measure(); });
+    }
+
+    /** Slot heights feed the print spacers (--doc-hdr-h / --doc-ftr-h), so
+     *  they re-measure on content mutation, resize, and font load. */
+    _measure() {
+      const hdr = this.querySelector(':scope > [slot="header"]');
+      const ftr = this.querySelector(':scope > [slot="footer"]');
+      this._syncSize(hdr ? hdr.offsetHeight : 0, ftr ? ftr.offsetHeight : 0);
+    }
+  }
+
+  if (!customElements.get('doc-page')) {
+    customElements.define('doc-page', DocPage);
+  }
+})();
+
+</script>
+<script>
+(function(){
+  // ===== Injected by build.py — do not edit here; edit the brand file + SHARED_ENDPOINT =====
+  var FORM_NAME = "Everyday Scaries";   // routes to a tab of this name in the shared Google Sheet
+  var ENDPOINT  = "https://script.google.com/macros/s/AKfycbzJL-ndyFgppx5YciRzy6UU2m87CytJCC_BVgGeII6X0yPoqhjLSCog9bNw-mA_zpd9Jw/exec";    // shared Apps Script /exec URL (same for every brand)
+  var KEY       = "blink-es-discovery-prework-v1"; // localStorage key (per brand, so brands don't collide)
+  var LABELS    = {
+    "completed_by": "Completed by",
+    "date": "Date",
+    "q1_1": "1.1 What is Everyday Scaries about, and what is its promise to the people who follow it?",
+    "q1_2": "1.2 Where does Everyday Scaries live today, and where do you want it to be in 12 months?",
+    "q1_3": "1.3 What are your top 1–2 priorities for Everyday Scaries over the next 12 months?",
+    "q1_4": "1.4 What do you want your content to do most right now?",
+    "q2_1": "2.1 Describe the voice and personality of Everyday Scaries in 3–5 words or phrases.",
+    "q2_2": "2.2 What do you believe about entrepreneurship and fear that most voices in this space aren't saying?",
+    "q3_1": "3.1 Describe the person Everyday Scaries is for. Who are they, and where do they already spend their attention?",
+    "q3_2": "3.2 What is the #1 reason someone would follow Everyday Scaries and stay?",
+    "q4_1": "4.1 Name 3–5 creators, brands, or voices your audience already follows in and around this space.",
+    "q4_2": "4.2 What are those voices NOT saying that your audience clearly wants more of?",
+    "q5_1": "5.1 What have you published so far, and where? Include follower or connection counts if you have them.",
+    "q5_2": "5.2 Has any post resonated noticeably — comments, shares, DMs, saves? What was it, and why do you think it landed?",
+    "q5_3": "5.3 Who will create the content — and how many hours per week are realistically available?",
+    "q5_4": "5.4 What content formats feel most natural or exciting — and which do you want to avoid?",
+    "q6_1": "6.1 What is the single most important thing you want to leave the Discovery session with?",
+    "q6_2": "6.2 Is there anything about you, the brand, or where it's headed that we haven't asked about — that you think we need to know going in?"
+};      // { fieldName: "1.1 full question text", ... }
+  // =========================================================================================
+
+  var form = document.querySelector('form');
+  var note = document.getElementById('saveNote');
+  var fields = Array.prototype.slice.call(form.querySelectorAll('textarea, input'));
+  var timer;
+
+  function load(){
+    var raw; try { raw = localStorage.getItem(KEY); } catch(e){ return; }
+    if(!raw) return;
+    var data; try { data = JSON.parse(raw); } catch(e){ return; }
+    fields.forEach(function(f){ if(f.name && data[f.name] != null) f.value = data[f.name]; });
+  }
+  function collect(){
+    var data = {};
+    fields.forEach(function(f){ if(f.name) data[f.name] = f.value; });
+    return data;
+  }
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(collect())); } catch(e){}
+    flash('<b>Saved ✓</b> · kept in this browser');
+  }
+  function flash(html, sticky){
+    if(!note) return; note.innerHTML = html; clearTimeout(timer);
+    if(!sticky) timer = setTimeout(function(){ note.textContent = 'Your answers save automatically in this browser.'; }, 1800);
+  }
+  load();
+  fields.forEach(function(f){ f.addEventListener('input', save); });
+
+  // Submit -> Google Sheet (Apps Script web app)
+  var submit = document.getElementById('submitBtn');
+  if(submit) submit.addEventListener('click', function(){
+    if(ENDPOINT.indexOf('http') !== 0){ alert('This form is not connected yet. Ask your Blink strategist for the live link.'); return; }
+    var d = collect();
+    var payload = { _form: FORM_NAME, _submitted_at: new Date().toISOString() };
+    Object.keys(LABELS).forEach(function(k){ payload[LABELS[k]] = d[k] || ''; });
+    submit.disabled = true; flash('Submitting…', true);
+    fetch(ENDPOINT, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(payload) })
+      .then(function(){ flash('<b>Submitted ✓</b> · sent to Blink. You can close this page.', true); })
+      .catch(function(){ submit.disabled = false; flash('Could not submit — check your connection and try again, or use “Download a copy”.', true); });
+  });
+
+  // Fallback: download a CSV copy
+  var dl = document.getElementById('downloadBtn');
+  if(dl) dl.addEventListener('click', function(){
+    save();
+    var d = collect();
+    var rows = [['Question','Answer']];
+    Object.keys(LABELS).forEach(function(k){ rows.push([LABELS[k], d[k] || '']); });
+    var csv = rows.map(function(r){ return r.map(function(c){ return '"' + String(c).replace(/"/g,'""') + '"'; }).join(','); }).join('\r\n');
+    var blob = new Blob(['﻿'+csv], {type:'text/csv;charset=utf-8'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = FORM_NAME.replace(/[^A-Za-z0-9]+/g,'-') + '-Discovery-PreWork.csv';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  });
+
+  var clr = document.getElementById('clearBtn');
+  if(clr) clr.addEventListener('click', function(){
+    if(!confirm('Clear all your answers on this device? This cannot be undone.')) return;
+    try { localStorage.removeItem(KEY); } catch(e){}
+    fields.forEach(function(f){ f.value = ''; });
+    if(note) note.textContent = 'Cleared. Your answers save automatically in this browser.';
+  });
+})();
+
+</script>
+</body>
+</html>
