@@ -47,7 +47,7 @@ def inline_js(s):
 
 def build_labels(sections):
     """Single source of truth for the JS LABELS map + Sheet columns."""
-    labels = {"completed_by": "Completed by", "date": "Date"}
+    labels = {"completed_by": "Completed by"}
     for sec in sections:
         for q in sec["questions"]:
             labels[q["name"]] = "{} {}".format(q["id"], q["text"]).strip()
@@ -118,8 +118,6 @@ def render_body(b):
         '  <div class="coverfields">\n'
         '    <label class="cf"><span>Completed by</span>'
         '<input type="text" name="completed_by" placeholder="Your name"></label>\n'
-        '    <label class="cf"><span>Date</span>'
-        '<input type="text" name="date" placeholder="MM / DD / YYYY"></label>\n'
         '  </div>\n\n'
         '  <div class="howto">\n'
         '    <div class="block-label">{howto_label}</div>\n'
