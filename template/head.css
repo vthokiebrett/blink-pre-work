@@ -236,3 +236,30 @@ doc-page:not(:defined){visibility:hidden}
   .savenote { text-align:center; margin-top:14px; font:500 10.5px/1 var(--font-body); letter-spacing:.04em; color:var(--ink-faint); }
   .savenote b { color:var(--coral); font-weight:700; }
   @media print { .actionbar, .savenote { display:none !important; } }
+
+  /* ===== Mobile / small screens =====
+     The doc-page web component locks its sheet to a fixed US-Letter width
+     (8.5in) and sets :host{min-width:max-content}, which forces horizontal
+     scroll on phones. Override the themeable custom properties + min-width
+     from the light DOM (important beats the component's normal :host rules)
+     so the sheet flows to full width. Desktop and print are untouched. */
+  /* 860px = the sheet's 816px + desk padding; below it the fixed sheet would
+     otherwise force horizontal scroll (covers phones and portrait tablets). */
+  @media (max-width: 860px) {
+    doc-page {
+      --doc-page-w: min(100%, 720px) !important;
+      --doc-page-margin: 20px !important;
+      min-width: 0 !important;
+      padding: 16px 12px !important;
+    }
+    .cover-title { font-size: 34px; }
+    .cover-lede, .howto p, .qhelp, .closing h2, .closing p { max-width: none; }
+    /* Answers and help go full width instead of indenting under the number */
+    .answer { width: 100%; margin-left: 0; }
+    .qhelp { margin-left: 0; }
+    .coverfields { flex-direction: column; max-width: none; }
+    .secnum { font-size: 32px; }
+    .actionbar { flex-wrap: wrap; gap: 10px; }
+    .btn { padding: 14px 20px; }
+    .esttime { display: inline-block; }
+  }

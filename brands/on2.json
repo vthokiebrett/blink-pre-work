@@ -1,0 +1,165 @@
+{
+  "slug": "on2",
+  "form_name": "ON2",
+  "client_name": "ON2",
+  "title": "ON2 — Discovery Pre-Work",
+  "cover_lede": "We've read your ON2 brand brief, so this is short. These questions fill the gaps we still need from you. Please complete it before your Discovery session and return it at least 48 hours in advance.",
+  "howto_title": "A short pre-read to make Discovery count",
+  "howto_paras": [
+    "Your answers, alongside the brand brief you've already shared, give your Blink strategist the context to make Discovery focused and actionable. We've kept this short on purpose, it only asks what we still need from you.",
+    "Most questions take a minute or two and only need your honest instinct. A couple ask you to glance at what you've built so far, and those are marked. Pull that together before you start."
+  ],
+  "est_time_html": "Estimated time: ~15–20 minutes &nbsp;·&nbsp; a short, focused pre-read",
+  "ready": [
+    { "a": "Where the three pilots stand", "b": "CatchersU, Arlington Storm, Arlington Babe Ruth, and any others in conversation" },
+    { "a": "Anything you've validated so far", "b": "waitlist, early interest, a following or email list, even if informal" },
+    { "a": "Who makes content and how much time", "b": "you, a collaborator, a freelancer, and realistic weekly hours" }
+  ],
+  "sections": [
+    {
+      "num": "01",
+      "title": "Your Brand & Model",
+      "subtitle": "The one thing you most want Discovery to pressure-test",
+      "time": "~2 min",
+      "questions": [
+        {
+          "id": "1.1",
+          "name": "q1_1",
+          "text": "The brief covers the brand, the co-brand model, the touchpoints, and the vision well. Which part of that plan are you least certain about, or most want Discovery to pressure-test?",
+          "help": "We're not re-asking what's in your brief. Point us at the risks or open questions, the part of the plan you'd most want a second set of eyes on.",
+          "tag": "↗ Think this through first",
+          "min_height": 130
+        }
+      ]
+    },
+    {
+      "num": "02",
+      "title": "Your Partner Organizations",
+      "subtitle": "The youth organizations who co-brand ON2 and bring it to their community",
+      "time": "~4 min",
+      "questions": [
+        {
+          "id": "2.1",
+          "name": "q2_1",
+          "text": "Describe the ideal partner organization for ON2. What makes one a strong fit?",
+          "help": "Your three pilots are different entry points: CatchersU (national training), Arlington Storm (competitive travel), Arlington Babe Ruth (community league). What do the best-fit organizations have in common, identity, community, a committed family base?",
+          "tag": "↗ Think this through first",
+          "min_height": 120
+        },
+        {
+          "id": "2.2",
+          "name": "q2_2",
+          "text": "What does an organization need from a merch partner to say yes and to promote ON2 to its families?",
+          "help": "The Team Up Athletics lesson is that organizations want a partner who understands their program and handles the details. The relationship is the unlock. What matters most to them, and what makes them hesitate?",
+          "tag": "",
+          "min_height": 120
+        },
+        {
+          "id": "2.3",
+          "name": "q2_3",
+          "text": "From the organization's side, what has to be true for a pilot to count as a success?",
+          "help": "Think from the organization's side: revenue share, families actually buying and wearing it, the org looking good to its community. What does “this worked” look like for them?",
+          "tag": "",
+          "min_height": 110
+        }
+      ]
+    },
+    {
+      "num": "03",
+      "title": "Your Families & Kids",
+      "subtitle": "The kids who wear ON2 off the field and the parents who buy it",
+      "time": "~3 min",
+      "questions": [
+        {
+          "id": "3.1",
+          "name": "q3_1",
+          "text": "Describe the family and kid ON2 is for. Where are they in their youth-sports journey, and what do they care about?",
+          "help": "Include the kid (age, sport, how they see themselves) and the parent (what they'll spend on and why). These families already invest real time, money, and commitment in their kid's athletic life.",
+          "tag": "",
+          "min_height": 120
+        },
+        {
+          "id": "3.2",
+          "name": "q3_2",
+          "text": "Why does a kid want to wear ON2 off the field, and why does a parent buy it?",
+          "help": "The gap ON2 fills is off-field lifestyle apparel that travels from the diamond to the car ride home to school. What feeling or identity makes them choose it?",
+          "tag": "",
+          "min_height": 110
+        }
+      ]
+    },
+    {
+      "num": "04",
+      "title": "Your Content & Capacity",
+      "subtitle": "What you can produce and who will make it, pre-launch",
+      "time": "~6 min",
+      "questions": [
+        {
+          "id": "4.1",
+          "name": "q4_1",
+          "text": "Since ON2 is pre-launch, what have you built or validated so far?",
+          "help": "Pre-launch is completely fine. List whatever exists: signed or interested pilots, a following, an email list or waitlist, even if early or informal. If there's nothing formal yet, say so.",
+          "tag": "↗ Look this up first",
+          "min_height": 120
+        },
+        {
+          "id": "4.2",
+          "name": "q4_2",
+          "text": "For the co-branded collections, will partner organizations co-create the content, or will ON2 produce it all?",
+          "help": "Think about who makes the photos, video, and posts that promote each organization's collection, ON2's team, the organization, or both. Be honest about what's realistic.",
+          "tag": "",
+          "min_height": 100
+        },
+        {
+          "id": "4.3",
+          "name": "q4_3",
+          "text": "Who will create ON2's content, and how many hours per week are realistically available?",
+          "help": "List who's involved: you, a collaborator, a freelancer, an editor. Be honest about actual availability, not what you wish it were. Your team brings deep brand-activation and operational experience, so tell us how that translates to weekly hours.",
+          "tag": "↗ Think this through first",
+          "min_height": 110
+        },
+        {
+          "id": "4.4",
+          "name": "q4_4",
+          "text": "What content formats feel most natural or important, and which do you want to avoid?",
+          "help": "e.g. product and lifestyle photography, short-form video from tournaments, organization spotlights, founder storytelling, the sticker and touchpoint moments. Be honest about what you'll actually sustain.",
+          "tag": "",
+          "min_height": 120
+        }
+      ]
+    },
+    {
+      "num": "05",
+      "title": "Your Goals for Discovery",
+      "subtitle": "What you want to walk away with",
+      "time": "~2 min",
+      "questions": [
+        {
+          "id": "5.1",
+          "name": "q5_1",
+          "text": "What are your top 1–2 priorities for ON2 over the next 12 months?",
+          "help": "e.g. proving the co-brand model across the three pilots, launching the off-field kid line, building a repeatable playbook for the next organizations, laying groundwork for the parent apparel line.",
+          "tag": "",
+          "min_height": 110
+        },
+        {
+          "id": "5.2",
+          "name": "q5_2",
+          "text": "What is the single most important thing you want to leave the Discovery session with?",
+          "help": "e.g. a clear content strategy, a partner-acquisition playbook, positioning against the named competitors, a launch plan for the pilots, clarity on what to actually post.",
+          "tag": "",
+          "min_height": 110
+        },
+        {
+          "id": "5.3",
+          "name": "q5_3",
+          "text": "Is there anything about ON2, the model, or where it's headed that we haven't asked, that we need to know going in?",
+          "help": "Optional. Nothing is too small. Use this for anything that didn't fit earlier.",
+          "tag": "",
+          "min_height": 120
+        }
+      ]
+    }
+  ],
+  "closing_body": "Please return this to your Blink strategist at least 48 hours before your Discovery session. Your answers, together with your brand brief, give us exactly what we need to make the session focused and valuable."
+}
